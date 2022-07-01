@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myipaddress
+spec:
+  selector:
+    matchLabels:
+      app: myipaddress
+  template:
+    metadata:
+      labels:
+        app: myipaddress
+    spec:
+      containers:
+      - name: myipaddress
+        image: docker.io/peterzandbergen/myipaddress
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
