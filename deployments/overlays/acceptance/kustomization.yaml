@@ -3,3 +3,9 @@ kind: Kustomization
 
 resources:
 - ../../base/myipaddress
+
+configMapGenerator:
+- name: environment
+  behavior: merge
+  envs:
+    - "settings.env"
