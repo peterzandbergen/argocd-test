@@ -4,6 +4,10 @@ kind: Kustomization
 resources:
 - ../../base/myipaddress
 
+replicas:
+  - name: myipaddress
+    count: 3
+
 configMapGenerator:
 - name: environment
   behavior: merge
